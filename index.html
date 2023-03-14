@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practise</title>
+</head>
+<body>
+    <h1 style="color: blue">DOM Practise</h1>
+    <div class="container" style="background-color: lightgreen;">
+        <!-- <p>The DOM is an object that represents out HTML 1:1!</p>
+        <p>It's where JavaScript, HTML and CSS come together</p> -->
+    </div>
+</body>
+
+<script>
+    var myHeader = document.getElementsByTagName('h1')[0];
+
+    setInterval(function() {
+        if(myHeader.style.color === 'blue') {
+            myHeader.style.color = 'green';
+        } else if (myHeader.style.color === 'green') {
+            myHeader.style.color = 'purple';
+        } else if (myHeader.style.color === 'purple') {
+            myHeader.style.color = 'cyan'
+        } else if (myHeader.style.color === 'cyan') {
+            myHeader.style.color = 'yellow'
+        } else if (myHeader.style.color === 'yellow') {
+            myHeader.style.color = 'lightgreen'
+        } else {
+            myHeader.style.color = 'blue';
+        }
+    }, 2000);
+
+    var button = document.createElement('button');
+    document.body.appendChild(button)
+    button.textContent = 'click me';
+    button.classList.add('my-button');
+    button.style.backgroundColor = 'green';
+    button.style.color = 'white';
+
+    var myNewP = document.createElement('p');
+    myNewP.textContent = 'this is a dynamic paragraph';
+
+    var container = document.getElementsByClassName('container')[0];
+    container.appendChild(myNewP);
+
+
+
+    var response = {
+        body: [
+            'The is an object that represents our HTML 1:1! Juuuuu',
+            'It\'s where JavaScript, HTML, and CSS come together'
+        ]
+    };
+
+    var container = document.getElementsByClassName('container')[0];
+
+    for (var i = 0; i < response.body.length; i++) {
+        var myP = document.createElement('p');
+        myP.textContent = response.body[i];
+        myP.classList.add('body-paragraph');
+        myP.style.color = 'green';
+        container.appendChild(myP);
+    }
+
+    // myNewP.remove()
+    
+
+
+</script>
+</html>
